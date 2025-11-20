@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tech insights, tutorials, and best practices from PragatiXSphere. AI/ML, Cloud Infrastructure, Web Development, and DevOps articles.">
+    <meta name="keywords" content="Tech Blog, AI Blog, Cloud Computing, Web Development, DevOps, Machine Learning">
+    <title>Tech Blog | PragatiXSphere - AI, Cloud & Web Development Insights</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">PX</div>
+                PragatiXSphere
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="cta-button">Contact</a></li>
+            </ul>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 45vh; padding-top: 8rem;">
+        <div class="hero-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <p class="hero-kicker fade-in">Tech Insights & Tutorials</p>
+            <h1 class="fade-in" style="font-size: 3rem; margin-bottom: 1.25rem;">Learn. Build. Scale.</h1>
+            <p class="fade-in" style="font-size: 1.15rem; color: var(--text-light); max-width: 650px; margin: 0 auto 2rem;">
+                Real-world insights from building AI systems, cloud infrastructure, and modern web applications.
+            </p>
+            
+            <!-- Category Filter -->
+            <div class="blog-filters fade-in" style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
+                <button class="filter-btn active" data-category="all">All Posts</button>
+                <button class="filter-btn" data-category="AI/ML">AI & ML</button>
+                <button class="filter-btn" data-category="Cloud">Cloud</button>
+                <button class="filter-btn" data-category="Web Development">Web Dev</button>
+                <button class="filter-btn" data-category="DevOps">DevOps</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid Section -->
+    <section style="background: var(--light-bg); padding: 4rem 5% 6rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <!-- Blog Grid -->
+            <div id="blogGrid" class="blog-grid">
+                <!-- Blog cards will be dynamically inserted here -->
+            </div>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p>Loading articles...</p>
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <p style="font-size: 1.2rem; color: var(--text-light);">No articles found in this category.</p>
+            </div>
+
+            <!-- Pagination -->
+            <div id="pagination" class="pagination">
+                <!-- Pagination will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 5rem 5%;">
+        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+            <h2 style="color: white; font-size: 2.3rem; margin-bottom: 1rem;">Stay Updated</h2>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 2rem;">
+                Get the latest tech insights, tutorials, and best practices delivered to your inbox.
+            </p>
+            <div style="display: flex; gap: 0.75rem; max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
+                <input type="email" placeholder="Your email address" 
+                    style="flex: 1; min-width: 250px; padding: 0.9rem 1.25rem; border-radius: 8px; border: none; font-size: 1rem;">
+                <button class="btn" style="background: white; color: var(--primary-color); padding: 0.9rem 2rem;">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>PragatiXSphere</h3>
+                <p>Transforming businesses through AI-powered solutions and innovative technology.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="services.html#ai-ml">AI & Machine Learning</a>
+                <a href="services.html#web-dev">Web Development</a>
+                <a href="services.html#mobile-dev">Mobile Development</a>
+                <a href="services.html#cloud">Cloud Solutions</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📧 info@pragatixsphere.com</p>
+                <p>📞 +91 9540674254</p>
+                <p>📍 Gorakhpur, India</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; <span class="current-year">2025</span> PragatiXSphere. All rights reserved. | Empowering businesses with AI.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>

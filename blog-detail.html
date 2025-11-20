@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" id="metaDescription">
+    <meta name="keywords" content="" id="metaKeywords">
+    <meta property="og:title" content="" id="ogTitle">
+    <meta property="og:description" content="" id="ogDescription">
+    <meta property="og:image" content="" id="ogImage">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <title id="pageTitle">Blog | PragatiXSphere</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/blog-detail.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">PX</div>
+                PragatiXSphere
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="cta-button">Contact</a></li>
+            </ul>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Loading State -->
+    <div id="loadingState" class="loading-state" style="min-height: 60vh; display: flex; align-items: center; justify-content: center;">
+        <div style="text-align: center;">
+            <div class="loading-spinner"></div>
+            <p>Loading article...</p>
+        </div>
+    </div>
+
+    <!-- Blog Detail Content -->
+    <article id="blogDetail" class="blog-detail" style="display: none;">
+        <!-- Hero Section -->
+        <section class="blog-hero">
+            <div class="blog-hero-content">
+                <nav class="breadcrumb fade-in">
+                    <a href="index.html">Home</a>
+                    <span>›</span>
+                    <a href="blog.html">Blog</a>
+                    <span>›</span>
+                    <span id="breadcrumbCategory"></span>
+                </nav>
+                
+                <div class="blog-hero-meta fade-in">
+                    <span class="blog-category" id="heroCategory"></span>
+                    <span>•</span>
+                    <span id="heroDate"></span>
+                    <span>•</span>
+                    <span id="heroReadTime"></span>
+                </div>
+                
+                <h1 class="blog-hero-title fade-in" id="heroTitle"></h1>
+                
+                <div class="blog-hero-author fade-in">
+                    <div class="author-avatar">
+                        <span id="authorInitial"></span>
+                    </div>
+                    <div class="author-info">
+                        <div class="author-name" id="authorName"></div>
+                        <div class="author-title">Technical Writer</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="blog-hero-image fade-in">
+                <img id="heroImage" src="" alt="" loading="eager">
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <section class="blog-content-wrapper">
+            <div class="blog-content-container">
+                <div class="blog-content" id="blogContent">
+                    <!-- Content will be dynamically inserted here -->
+                </div>
+                
+                <!-- Tags -->
+                <div class="blog-tags-section">
+                    <h4>Topics Covered</h4>
+                    <div class="blog-tags" id="blogTags"></div>
+                </div>
+                
+                <!-- Share Section -->
+                <div class="blog-share">
+                    <h4>Share this article</h4>
+                    <div class="share-buttons">
+                        <button class="share-btn twitter" onclick="shareOnTwitter()">
+                            <span>𝕏</span> Twitter
+                        </button>
+                        <button class="share-btn linkedin" onclick="shareOnLinkedIn()">
+                            <span>in</span> LinkedIn
+                        </button>
+                        <button class="share-btn facebook" onclick="shareOnFacebook()">
+                            <span>f</span> Facebook
+                        </button>
+                        <button class="share-btn copy" onclick="copyLink()">
+                            <span>🔗</span> Copy Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Articles -->
+        <section class="related-articles">
+            <div class="related-articles-container">
+                <h2>Related Articles</h2>
+                <div class="blog-grid" id="relatedArticles">
+                    <!-- Related articles will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter CTA -->
+        <section class="newsletter-cta">
+            <div class="newsletter-content">
+                <h2>Never Miss an Update</h2>
+                <p>Get the latest tech insights and tutorials delivered straight to your inbox.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Your email address" id="newsletterEmail">
+                    <button class="btn" onclick="subscribeNewsletter()">Subscribe</button>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <!-- 404 State -->
+    <div id="notFoundState" class="not-found-state" style="display: none; min-height: 60vh; text-align: center; padding: 8rem 5%;">
+        <h1 style="font-size: 5rem; margin-bottom: 1rem;">404</h1>
+        <h2 style="margin-bottom: 1rem;">Article Not Found</h2>
+        <p style="color: var(--text-light); margin-bottom: 2rem;">The article you're looking for doesn't exist or has been removed.</p>
+        <button class="btn" onclick="window.location.href='blog.html'">Back to Blog</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>PragatiXSphere</h3>
+                <p>Transforming businesses through AI-powered solutions and innovative technology.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="services.html#ai-ml">AI & Machine Learning</a>
+                <a href="services.html#web-dev">Web Development</a>
+                <a href="services.html#mobile-dev">Mobile Development</a>
+                <a href="services.html#cloud">Cloud Solutions</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📧 info@pragatixsphere.com</p>
+                <p>📞 +91 9540674254</p>
+                <p>📍 Gorakhpur, India</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; <span class="current-year">2025</span> PragatiXSphere. All rights reserved. | Empowering businesses with AI.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/blog-detail.js"></script>
+</body>
+</html>
