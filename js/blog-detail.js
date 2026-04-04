@@ -156,7 +156,7 @@ function formatDate(dateString) {
 
 // Update SEO meta tags
 function updateSEO() {
-    document.getElementById('pageTitle').textContent = `${currentBlog.title} | PragatiXSphere Blog`;
+    document.getElementById('pageTitle').textContent = `${currentBlog.title} | PragatiVerse Blog`;
     document.getElementById('metaDescription').content = currentBlog.excerpt;
     document.getElementById('metaKeywords').content = currentBlog.tags.join(', ');
     

@@ -291,6 +291,13 @@
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .blog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+}
+
 @media (max-width: 768px) {
     .blog-grid {
         grid-template-columns: 1fr;
@@ -299,11 +306,24 @@
     
     .blog-filters {
         gap: 0.5rem;
+        flex-wrap: wrap;
     }
     
     .filter-btn {
         padding: 0.5rem 1.2rem;
         font-size: 0.85rem;
+    }
+    
+    .blog-card-image {
+        height: 200px;
+    }
+    
+    .blog-card-content {
+        padding: 1.5rem;
+    }
+    
+    .blog-card-title {
+        font-size: 1.25rem;
     }
     
     .pagination {
@@ -315,6 +335,86 @@
         padding: 0.6rem 1rem;
         font-size: 0.9rem;
         min-width: 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    /* Blog Grid - Horizontal Scroll */
+    .blog-grid {
+        display: flex;
+        grid-template-columns: none;
+        gap: 1rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 1rem;
+    }
+    
+    .blog-card {
+        min-width: calc(100vw - 3rem);
+        max-width: calc(100vw - 3rem);
+        flex: 0 0 calc(100vw - 3rem);
+        scroll-snap-align: start;
+    }
+    
+    .blog-card-title,
+    .blog-card-excerpt,
+    .blog-author {
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .blog-card-image {
+        height: 180px;
+    }
+    
+    .blog-card-content {
+        padding: 1.25rem;
+    }
+    
+    .blog-card-title {
+        font-size: 1.15rem;
+    }
+    
+    .blog-card-excerpt {
+        font-size: 0.9rem;
+    }
+    
+    .blog-card-meta {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .blog-category {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.7rem;
+    }
+    
+    .filter-btn {
+        padding: 0.45rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .pagination-btn {
+        padding: 0.5rem 0.85rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-card-content {
+        padding: 1rem;
+    }
+    
+    .blog-card-title {
+        font-size: 1.05rem;
+    }
+    
+    .blog-card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
     }
 }
 

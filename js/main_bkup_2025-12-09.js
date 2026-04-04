@@ -145,9 +145,6 @@ function initFormValidation() {
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
     const phoneInput = document.getElementById('phone');
-    const companyInput = document.getElementById('company');
-    const serviceInput = document.getElementById('service');
-    const budgetInput = document.getElementById('budget');
     const messageInput = document.getElementById('message');
     
     form.addEventListener('submit', function(e) {
@@ -189,59 +186,11 @@ function initFormValidation() {
         
         if (isValid) {
             // Show success message
-            // showSuccessMessage();
-            // form.reset();
-            const formData = {
-                name: nameInput.value ? nameInput.value : '',
-                email: emailInput.value ? emailInput.value : '',
-                phone: phoneInput ? phoneInput.value : '',
-                service: serviceInput ? serviceInput.value : '',
-                budget: budgetInput ? budgetInput.value : '',
-                company: companyInput ? companyInput.value : '',
-                message: messageInput.value ? messageInput.value : ''
-            };
-            const API_URL = "https://pragativerse.com/save.php";
-            fetch(API_URL, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log("Success:", data);
-                clearError(nameInput);
-                clearError(emailInput);
-                if (phoneInput) clearError(phoneInput);
-                if (serviceInput) clearError(serviceInput);
-                if (budgetInput) clearError(budgetInput);
-                if (companyInput) clearError(companyInput);
-                clearError(messageInput);
-                if(data.status === 'success') {
-                    showSuccessMessage();
-                    form.reset();
-                } else if (data.status === 'error' && data.errors) {
-                    showBackendErrors(data.errors);
-                }
-            })
-            .catch(error => {
-                alert("Something went wrong. Please try again.");
-            });
-            
+            showSuccessMessage();
+            form.reset();
         }
     });
-
-    function showBackendErrors(errors) {
-        if (errors.name) showError(nameInput, errors.name);
-        if (errors.email) showError(emailInput, errors.email);
-        if (errors.phone && phoneInput) showError(phoneInput, errors.phone);
-        if (errors.service && serviceInput) showError(serviceInput, errors.service);
-        if (errors.budget && budgetInput) showError(budgetInput, errors.budget);
-        if (errors.company && companyInput) showError(companyInput, errors.company);
-        if (errors.message) showError(messageInput, errors.message);
-    }
-        
+    
     // Real-time validation
     if (nameInput) {
         nameInput.addEventListener('blur', function() {
