@@ -71,16 +71,15 @@ p {
 /* Header and Navigation */
 header {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(135deg, 
-        rgba(102, 126, 234, 0.95) 0%, 
-        rgba(118, 75, 162, 0.92) 100%);
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    right: 0px;
     backdrop-filter: blur(20px);
-    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.15);
+    box-shadow: rgba(102, 126, 234, 0.15) 0px 8px 32px;
     z-index: 1000;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.92) 100%);
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -158,9 +157,9 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.25rem 5%;
     max-width: 1400px;
-    margin: 0 auto;
+    padding: 0.35rem 5%;
+    margin: 0px auto;
     transition: padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -174,9 +173,15 @@ header.scrolled nav {
     color: white;
     display: flex;
     align-items: center;
+    filter: drop-shadow(rgba(0, 0, 0, 0.15) 0px 2px 8px);
     gap: 0.6rem;
-    transition: all 0.3s ease;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+    transition: 0.3s;
+}
+
+.logo img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
 }
 
 .logo:hover {
@@ -211,6 +216,10 @@ header.scrolled .logo-icon {
     width: 38px;
     height: 38px;
     font-size: 1.1rem;
+}
+
+header.scrolled .logo img {
+    height: 50px;
 }
 
 .nav-links {
