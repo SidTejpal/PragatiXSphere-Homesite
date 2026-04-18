@@ -192,16 +192,22 @@ function initFormValidation() {
             // showSuccessMessage();
             // form.reset();
             const formData = {
-                name: nameInput.value ? nameInput.value : '',
-                email: emailInput.value ? emailInput.value : '',
+                access_key: "7c69bb48-c6cd-4b05-8043-4e0ad9a0d289",
+                subject: "New Contact Form Submission - PragatiVerse",
+                from_name: "PragatiVerse Website",
+                name: nameInput.value || '',
+                email: emailInput.value || '',
                 phone: phoneInput ? phoneInput.value : '',
                 service: serviceInput ? serviceInput.value : '',
                 budget: budgetInput ? budgetInput.value : '',
                 company: companyInput ? companyInput.value : '',
-                message: messageInput.value ? messageInput.value : ''
+                message: messageInput.value || ''
             };
-            const API_URL = "https://pragativerse.com/save.php";
-            fetch(API_URL, {
+            const submitBtn = form.querySelector('.submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -210,22 +216,18 @@ function initFormValidation() {
             })
             .then(response => response.json())
             .then(data => {
-                console.log("Success:", data);
-                clearError(nameInput);
-                clearError(emailInput);
-                if (phoneInput) clearError(phoneInput);
-                if (serviceInput) clearError(serviceInput);
-                if (budgetInput) clearError(budgetInput);
-                if (companyInput) clearError(companyInput);
-                clearError(messageInput);
-                if(data.status === 'success') {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                if (data.success) {
                     showSuccessMessage();
                     form.reset();
-                } else if (data.status === 'error' && data.errors) {
-                    showBackendErrors(data.errors);
+                } else {
+                    alert(data.message || "Something went wrong. Please try again.");
                 }
             })
             .catch(error => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
                 alert("Something went wrong. Please try again.");
             });
             
